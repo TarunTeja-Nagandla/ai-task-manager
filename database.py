@@ -1,8 +1,12 @@
+import os
 from datetime import date, datetime
+from dotenv import load_dotenv
 from sqlalchemy import create_engine, Integer, String, Date, DateTime, func
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, sessionmaker
 
-DATABASE_URL = "sqlite:///tasks.db"
+load_dotenv()
+
+DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///tasks.db")
 engine = create_engine(DATABASE_URL)
 LocalSession = sessionmaker(bind=engine)
 

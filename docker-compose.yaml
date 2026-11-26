@@ -1,0 +1,18 @@
+services:
+  ai-task-manager:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ai-task-manager
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    environment:
+      - DATABASE_URL=sqlite:///data/tasks.db
+    volumes:
+      - tasks_data:/app/data
+    restart: unless-stopped
+
+volumes:
+  tasks_data:

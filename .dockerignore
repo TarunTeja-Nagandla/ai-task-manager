@@ -1,0 +1,33 @@
+# Environment & Secrets
+.env
+*.env
+
+# Git
+.git
+.gitignore
+
+# SQLite Database
+*.db
+tasks.db
+data/
+
+# Python & Virtual Environment
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+ENV/
+
+# IDE & Editor Settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS Generated Files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
